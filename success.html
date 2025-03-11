@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Balance Page</title>
+</head>
+<body>
+  <h1>Current Balance</h1>
+  <div id="balance">Loading...</div>
+
+  <script>
+    // Fetch the current balance from the backend API and display it
+    fetch('/api/balance')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('balance').innerText = data.balance;
+      })
+      .catch(err => {
+        console.error('Error fetching balance:', err);
+        document.getElementById('balance').innerText = 'Error fetching balance';
+      });
+  </script>
+</body>
+</html>
