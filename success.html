@@ -10,7 +10,7 @@
 
   <script>
     // Fetch the current balance from the backend API and display it
-    fetch('/api/balance')
+    fetch('https://a-4jby.onrender.com/api/balance')
       .then(response => response.json())
       .then(data => {
         document.getElementById('balance').innerText = data.balance;
